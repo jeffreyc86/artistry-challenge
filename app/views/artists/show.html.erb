@@ -1,0 +1,14 @@
+<h1><%= @artist.name %>'s Page</h1>
+
+<p><h3>Title: <%= @artist.title %></h3></p>
+<p><h3>Age: <%= @artist.age %></h3></p>
+
+<h4>Instruments Played:</h4>
+<ol>
+    <% @artist.instruments.each do |instrument| %>
+        <li><%= instrument.name %></li>
+        <p><%= instrument.classification %></p>
+    <% end %>
+</ol>
+
+<%= button_to "Add Instruments that #{@artist.name} Plays", new_artist_instrument_path, method: :get %>

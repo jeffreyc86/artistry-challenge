@@ -1,0 +1,15 @@
+<h1>Link an Artist to an Instrument</h1>
+    <br>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+            <%= error %><br>
+        <% end %>
+    <% end %>
+<br>
+<%= form_for @artist_instrument do |f| %>
+    <%= f.label :artist_id %>
+    <%= f.collection_select :artist_id, @artists, :id, :name %><br>
+    <%= f.label :instrument_id %>
+    <%= f.collection_select :instrument_id, @instruments, :id, :name %><br>
+    <%= f.submit "Create Association" %>
+<% end %>
