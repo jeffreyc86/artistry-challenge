@@ -3,7 +3,8 @@ class ArtistInstrument < ApplicationRecord
     belongs_to :artist
     belongs_to :instrument
 
-    validates :instrument_id, uniqueness: {scope: :artist_id,
-    message: "Artist already plays that instrument"}
+    validates :artist_id, uniqueness: {scope: :instrument_id,
+    message: "already plays that instrument"}
+
 
 end

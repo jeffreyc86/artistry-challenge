@@ -4,3 +4,5 @@
         <li><%= link_to artist.name, artist_path(artist) %></li>
     <% end %>
 </ol>
+
+<%= button_to "Create Artist", new_artist_path, method: :get %>
